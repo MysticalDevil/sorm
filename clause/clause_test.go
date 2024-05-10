@@ -14,7 +14,7 @@ func testSelect(t *testing.T) {
 	clause.Set(ORDERBY, "Age ASC")
 	sql, vars := clause.Build(SELECT, WHERE, ORDERBY, LIMIT)
 	t.Log(sql, vars)
-	if sql != "SELECT * FROM User WHERE Name = ?, Age = ? ORDERBY Age ASC LIMIT ?" {
+	if sql != "SELECT * FROM User WHERE Name = ?, Age = ? ORDER BY Age ASC LIMIT ?" {
 		t.Fatal("failed to build SQL")
 	}
 	if !reflect.DeepEqual(vars, []any{"Tom", 13, 3}) {
