@@ -3,6 +3,7 @@ package sorm
 import (
 	"errors"
 	_ "github.com/mattn/go-sqlite3"
+	"reflect"
 	"sorm/session"
 	"testing"
 )
@@ -19,6 +20,25 @@ func OpenDB(t *testing.T) *Engine {
 type User struct {
 	Name string `sorm:"PRIMARY KEY"`
 	Age  int
+}
+
+func TestEngine_Migrate(t *testing.T) {
+	engine := OpenDB(t)
+	defer engine.Close()
+	s := engine.NewSession()
+	_, _ = s.Raw("DROP TABLE IF EXISTS User").Exec()
+	_, _ = s.Raw("CREATE TABLE User(Name text PRIMARY KEY, XXX integer);").Exec()
+	_, _ = s.Raw("INSERT INTO User(`Name`) values (?), (?)", "Tom", "Sam").Exec()
+	err := engine.Migrate(&User{})
+	if err != nil {
+		t.Fatal("failed to migrate", err)
+	}
+
+	rows, _ := s.Raw("SELECT * FROM User").QueryRows()
+	columns, _ := rows.Columns()
+	if !reflect.DeepEqual(columns, []string{"Name", "Age"}) {
+		t.Fatal("failed to migrate table user, got columns", columns)
+	}
 }
 
 func TestEngine_Transaction(t *testing.T) {
