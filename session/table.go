@@ -2,9 +2,9 @@ package session
 
 import (
 	"fmt"
+	"github.com/MysticalDevil/sorm/log"
+	"github.com/MysticalDevil/sorm/schema"
 	"reflect"
-	"sorm/log"
-	"sorm/schema"
 	"strings"
 )
 

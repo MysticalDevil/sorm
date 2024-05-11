@@ -2,12 +2,12 @@ package session
 
 import (
 	"database/sql"
-	"sorm/clause"
-	"sorm/dialect"
-	"sorm/schema"
+	"github.com/MysticalDevil/sorm/clause"
+	"github.com/MysticalDevil/sorm/dialect"
+	"github.com/MysticalDevil/sorm/schema"
 	"strings"
 
-	"sorm/log"
+	"github.com/MysticalDevil/sorm/log"
 )
 
 type Session struct {

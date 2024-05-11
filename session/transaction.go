@@ -1,6 +1,6 @@
 package session
 
-import "sorm/log"
+import "github.com/MysticalDevil/sorm/log"
 
 func (s *Session) Begin() (err error) {
 	log.Info("transaction begin")

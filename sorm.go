@@ -3,11 +3,11 @@ package sorm
 import (
 	"database/sql"
 	"fmt"
-	"sorm/dialect"
+	"github.com/MysticalDevil/sorm/dialect"
 	"strings"
 
-	"sorm/log"
-	"sorm/session"
+	"github.com/MysticalDevil/sorm/log"
+	"github.com/MysticalDevil/sorm/session"
 )
 
 type Engine struct {

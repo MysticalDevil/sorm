@@ -3,7 +3,7 @@ package session
 import (
 	"reflect"
 
-	"sorm/log"
+	"github.com/MysticalDevil/sorm/log"
 )
 
 // Hooks constants

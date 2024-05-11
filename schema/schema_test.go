@@ -3,7 +3,7 @@ package schema
 import (
 	"testing"
 
-	"sorm/dialect"
+	"github.com/MysticalDevil/sorm/dialect"
 )
 
 type User struct {

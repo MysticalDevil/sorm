@@ -4,7 +4,7 @@ import (
 	"errors"
 	"reflect"
 
-	"sorm/clause"
+	"github.com/MysticalDevil/sorm/clause"
 )
 
 func (s *Session) Insert(values ...any) (int64, error) {

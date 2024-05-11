@@ -3,7 +3,7 @@ package session
 import (
 	"testing"
 
-	"sorm/log"
+	"github.com/MysticalDevil/sorm/log"
 )
 
 type Account struct {

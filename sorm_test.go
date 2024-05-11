@@ -2,9 +2,9 @@ package sorm
 
 import (
 	"errors"
+	"github.com/MysticalDevil/sorm/session"
 	_ "github.com/mattn/go-sqlite3"
 	"reflect"
-	"sorm/session"
 	"testing"
 )
 

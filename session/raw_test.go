@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"sorm/dialect"
+	"github.com/MysticalDevil/sorm/dialect"
 
 	_ "github.com/mattn/go-sqlite3"
 )

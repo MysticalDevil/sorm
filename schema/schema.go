@@ -4,7 +4,7 @@ import (
 	"go/ast"
 	"reflect"
 
-	"sorm/dialect"
+	"github.com/MysticalDevil/sorm/dialect"
 )
 
 // Field represents a column of database
