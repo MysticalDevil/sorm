@@ -23,7 +23,7 @@ func (a *Account) AfterQuery(s *Session) error {
 	return nil
 }
 
-func TestSession_CallMethod(t *testing.T) {
+func TestSession_CallMethod_BeforeInsert(t *testing.T) {
 	s := NewSession().Model(&Account{})
 	_ = s.DropTable()
 	_ = s.CreateTable()
